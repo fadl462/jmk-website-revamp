@@ -1,18 +1,18 @@
 # JMK Consulting Group — Premium Revamp
 
-This version is intentionally deployable as a **static GitHub Pages site**.
+A GitHub Pages-compatible static prototype with a new editorial motion language, transparent logo assets, responsive layouts, project filtering, animated metrics, mobile navigation, and progressive interaction.
 
-## Important
-GitHub Pages was previously configured to serve the repository root while `index.html` attempted to load `/src/main.jsx`. That file contains JSX/React module syntax and requires a Vite build step; GitHub Pages does not transform it automatically. The result is a blank page.
+## Deploy
 
-The root now contains a self-contained HTML/CSS/JavaScript implementation, so it can be served directly from the `main` branch root without npm, Vite, or a build command.
+GitHub Pages can serve the root `index.html` directly from `main` / root. No build command is required for this static prototype.
 
-## GitHub Pages
-Set:
-- Source: Deploy from a branch
-- Branch: `main`
-- Folder: `/ (root)`
+## Logo assets
 
-Then wait for the Pages deployment to finish and hard-refresh the site.
+- `logo-full-transparent.png` — original JMK full lockup with the outer white canvas removed.
+- `logo-full-white.png` — white inverse lockup for dark backgrounds.
+- `logo-full-black.png` — dark lockup for light/mobile surfaces.
+- `logo-mark-transparent.png` — transparent mark.
+- `logo-mark-white.png` — white inverse mark.
+- `logo-mark-black.png` — dark mark.
 
-The `src/` folder is retained as the original React source concept, but the live GitHub Pages entry point is the root `index.html`.
+The production CMS/backend, real application storage, authentication, search index, project database and email integrations remain future implementation work as specified in the project brief.
