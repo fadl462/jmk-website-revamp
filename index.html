@@ -1,1 +1,82 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><meta name="description" content="JMK Consulting Group — research, monitoring, evaluation, data and development consulting."/><link rel="icon" href="/logo-mark.png"/><title>JMK Consulting Group | Research • Data • Impact</title></head><body><div id="root"></div><script type="module" src="/src/main.jsx"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="JMK Consulting Group — research, monitoring, evaluation, data and development consulting." />
+  <meta name="theme-color" content="#101114" />
+  <title>JMK Consulting Group | Evidence. Insight. Impact.</title>
+  <link rel="icon" href="./logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <header class="header" id="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="JMK Consulting home"><img src="./logo-full.png" alt="JMK Consulting" /></a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#about">About</a><a href="#services">Services</a><a href="#sectors">Sectors</a><a href="#projects">Projects</a><a href="#insights">Insights</a><a href="#team">Team</a>
+      </nav>
+      <div class="header-actions">
+        <a class="text-link" href="#opportunities">Opportunities</a>
+        <a class="cta small" href="#contact">Let’s talk <span class="arrow">↗</span></a>
+        <button class="icon-btn mobile-only" id="menu-open" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-top"><img src="./logo-full.png" alt="JMK Consulting" /><button class="icon-btn" id="menu-close" aria-label="Close menu">×</button></div>
+    <div class="mobile-links">
+      <a href="#about">About <span>↗</span></a><a href="#services">Services <span>↗</span></a><a href="#sectors">Sectors <span>↗</span></a><a href="#projects">Projects <span>↗</span></a><a href="#insights">Insights <span>↗</span></a><a href="#team">Team <span>↗</span></a><a href="#opportunities">Opportunities <span>↗</span></a><a href="#contact">Contact <span>↗</span></a>
+    </div>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <div class="grid-lines"></div>
+      <div class="hero-inner reveal">
+        <div class="eyebrow"><span class="pulse"></span> Independent research · data · development consulting</div>
+        <h1>Evidence that <em>moves</em><br />decisions forward.</h1>
+        <p class="hero-copy">JMK Consulting Group turns complex questions into credible evidence, actionable insight and measurable impact across development, business and public-sector systems.</p>
+        <div class="hero-actions"><a class="cta" href="#contact">Start a conversation <span class="arrow">↗</span></a><a class="ghost" href="#projects">Explore our work <span>↓</span></a></div>
+        <div class="hero-meta"><div><span>01</span><strong>Research</strong></div><div><span>02</span><strong>Data &amp; Analytics</strong></div><div><span>03</span><strong>Impact &amp; Development</strong></div></div>
+      </div>
+      <div class="hero-orbit" aria-hidden="true"><div class="orbit-ring one"></div><div class="orbit-ring two"></div><div class="orbit-core"><span>JMK</span></div><span class="orb-label o1">FIELD</span><span class="orb-label o2">EVIDENCE</span><span class="orb-label o3">IMPACT</span></div>
+    </section>
+
+    <section class="ticker"><div class="ticker-track">RESEARCH <span>◆</span> MONITORING &amp; EVALUATION <span>◆</span> DATA SYSTEMS <span>◆</span> ORGANIZATIONAL DEVELOPMENT <span>◆</span> FIELD RESEARCH <span>◆</span> BUSINESS ADVISORY <span>◆</span> RESEARCH <span>◆</span> DATA SYSTEMS <span>◆</span></div></section>
+
+    <section class="section intro reveal" id="about"><div class="section-kicker">01 / WHO WE ARE</div><div class="split"><div><h2>Built for complex questions.</h2></div><div><p class="lead">We are a research, monitoring and evaluation, data, organizational development and development consulting firm. Our strength is the bridge between disciplined evidence and practical action.</p><p>From large-scale field studies to institutional assessments, JMK combines local understanding, robust methodology, technology and human insight to help clients see what matters — and what to do next.</p><a class="underlink" href="#services">Discover our approach <span>↗</span></a></div></div></section>
+
+    <section class="metrics reveal"><div class="metric"><strong data-count="8">0</strong><span>core sectors</span></div><div class="metric"><strong>360°</strong><span>evidence lifecycle</span></div><div class="metric"><strong>Ghana+</strong><span>regional reach</span></div><div class="metric"><strong>01</strong><span>integrated partner</span></div></section>
+
+    <section class="section services reveal" id="services"><div class="section-kicker">02 / WHAT WE DO</div><div class="section-head"><h2>Capabilities with <em>depth.</em></h2><p>Designed around the full journey from question to evidence to action.</p></div><div class="service-grid">
+      <article class="service-card"><div class="service-num">01</div><div><h3>Research &amp; M&amp;E</h3><p>Baseline, endline, impact evaluation, market research, surveys and rigorous field research.</p><a href="#contact">View capability <span>↗</span></a></div></article>
+      <article class="service-card"><div class="service-num">02</div><div><h3>Data &amp; Analytics</h3><p>Data collection, management, analysis, dashboards and evidence systems that turn information into decisions.</p><a href="#contact">View capability <span>↗</span></a></div></article>
+      <article class="service-card"><div class="service-num">03</div><div><h3>Organizational Development</h3><p>Training, capacity building, organizational assessments, gender audits and institutional development.</p><a href="#contact">View capability <span>↗</span></a></div></article>
+      <article class="service-card"><div class="service-num">04</div><div><h3>Business Advisory</h3><p>Business planning, strategic planning, feasibility, market entry and entrepreneurship support.</p><a href="#contact">View capability <span>↗</span></a></div></article>
+    </div></section>
+
+    <section class="section sectors reveal" id="sectors"><div class="section-kicker">03 / CORE AREAS</div><div class="section-head"><h2>Where evidence meets <em>impact.</em></h2></div><div class="sector-grid">
+      <a class="sector-item" href="#contact"><span>01</span><strong>Agriculture</strong><span>↗</span></a><a class="sector-item" href="#contact"><span>02</span><strong>Business Development &amp; Entrepreneurship</strong><span>↗</span></a><a class="sector-item" href="#contact"><span>03</span><strong>Education</strong><span>↗</span></a><a class="sector-item" href="#contact"><span>04</span><strong>Gender, Child &amp; Social Inclusion</strong><span>↗</span></a><a class="sector-item" href="#contact"><span>05</span><strong>Governance</strong><span>↗</span></a><a class="sector-item" href="#contact"><span>06</span><strong>Land, Natural Resources &amp; Environment</strong><span>↗</span></a><a class="sector-item" href="#contact"><span>07</span><strong>Socio-Economic Livelihood &amp; Engagement</strong><span>↗</span></a><a class="sector-item" href="#contact"><span>08</span><strong>WASH</strong><span>↗</span></a>
+    </div></section>
+
+    <section class="section projects reveal" id="projects"><div class="section-kicker">04 / CORPORATE EXPERIENCE</div><div class="section-head row"><div><h2>Work worth <em>exploring.</em></h2><p>Filter by sector to surface the kind of work you need.</p></div><div class="filters"><button class="active" data-filter="All">All</button><button data-filter="Education">Education</button><button data-filter="Governance">Governance</button><button data-filter="Agriculture">Agriculture</button><button data-filter="WASH">WASH</button></div></div><div class="project-grid" id="project-grid"></div></section>
+
+    <section class="section insights reveal" id="insights"><div class="section-kicker">05 / KNOWLEDGE HUB</div><div class="insight-feature"><div><span class="tag">DATA STORY</span><h2>Make the evidence impossible to ignore.</h2><p>Thought leadership, project updates, research insights and practical commentary — presented with the clarity decision-makers need.</p><a class="cta" href="#contact">Explore insights <span class="arrow">↗</span></a></div><div class="data-art"><div class="data-orbit"></div><div class="bars"><i style="height:32%"></i><i style="height:58%"></i><i style="height:46%"></i><i style="height:82%"></i><i style="height:68%"></i><i style="height:94%"></i></div></div></div></section>
+
+    <section class="section people reveal" id="team"><div class="section-kicker">06 / PEOPLE</div><div class="split"><div><h2>Human expertise.<br /><em>Methodological discipline.</em></h2></div><div><p class="lead">A multidisciplinary team across research, data, project management, field operations, gender and social inclusion, finance and administration.</p><div class="people-pills"><span>◈ Research</span><span>◈ Data</span><span>◈ Field</span><span>◈ Strategy</span></div></div></div></section>
+
+    <section class="section opps reveal" id="opportunities"><div class="opps-panel"><div><div class="section-kicker">07 / OPPORTUNITIES</div><h2>Bring your expertise<br />to the <em>field.</em></h2></div><div><p>Consultants, enumerators and interns can register through a structured talent pipeline built for real project demand.</p><a class="ghost light" href="#contact">See opportunities <span>↗</span></a></div></div></section>
+
+    <section class="section contact reveal" id="contact"><div class="contact-inner"><div><div class="section-kicker">08 / CONTACT</div><h2>Have a complex problem?<br /><em>Let’s build the evidence.</em></h2></div><form id="contact-form"><label>Name<input required name="name" placeholder="Your name" /></label><label>Email<input required type="email" name="email" placeholder="you@company.com" /></label><label>How can we help?<select name="type"><option>Research assignment</option><option>Monitoring &amp; Evaluation</option><option>Data collection</option><option>Business / organizational development</option><option>General enquiry</option></select></label><label>Message<textarea required name="message" rows="5" placeholder="Tell us briefly about your project..."></textarea></label><button class="cta" type="submit">Send enquiry <span class="arrow">↗</span></button><div class="form-note" id="form-note"></div></form></div></section>
+  </main>
+
+  <footer><div class="footer-top"><div><img class="footer-logo" src="./logo-full.png" alt="JMK Consulting" /><p>Research · data · development consulting.</p></div><div class="footer-nav"><div><strong>Explore</strong><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#insights">Insights</a></div><div><strong>Connect</strong><a href="#team">Team</a><a href="#opportunities">Opportunities</a><a href="#contact">Contact</a></div></div></div><div class="footer-bottom"><span>© 2026 JMK Consulting Group</span><span>Evidence. Insight. Impact.</span></div></footer>
+  <script src="./app.js"></script>
+</body>
+</html>
