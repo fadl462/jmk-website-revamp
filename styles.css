@@ -154,3 +154,53 @@ a,button,input,select,textarea{cursor:none}
 @media(max-width:680px){
   .hero-visual{top:56% !important;right:-46% !important;width:88vw !important;}
 }
+
+/* V10 — premium interaction refinement */
+.site-header{border-bottom:1px solid rgba(255,255,255,.08)}
+.site-header:not(.scrolled){background:linear-gradient(180deg,rgba(5,7,11,.72),transparent)}
+.brand img{width:178px;transition:transform .6s var(--ease),opacity .4s}
+.brand:hover img{transform:translateY(-1px) scale(1.015)}
+.nav a{transition:color .35s,letter-spacing .35s}.nav a:hover{letter-spacing:.1em}
+.hero-inner{grid-template-columns:minmax(0,1.02fr) 47%;}
+.hero-copy{max-width:820px}
+.hero-visual{filter:saturate(1.06)}
+.hero-visual:before{animation:visualBreath 9s ease-in-out infinite alternate}
+@keyframes visualBreath{from{transform:rotate(-18deg) scale(.98);opacity:.35}to{transform:rotate(-12deg) scale(1.03);opacity:.7}}
+.hero-scan{animation:scanFloat 7s ease-in-out infinite,scanPulse 5s ease-in-out infinite}
+@keyframes scanPulse{50%{box-shadow:0 0 100px rgba(48,60,150,.18)}}
+.section-title-row h2,.projects h2,.insights h2,.people h2,.opportunities h2,.contact h2{transition:transform .8s var(--ease-premium),letter-spacing .8s var(--ease-premium)}
+.section:hover .section-title-row h2,.projects:hover h2,.insights:hover h2,.people:hover h2,.opportunities:hover h2,.contact:hover h2{transform:translateX(3px)}
+.service-row{position:relative;overflow:hidden}
+.service-row:before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--orange);transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease-premium)}
+.service-row:hover:before{transform:scaleY(1);transform-origin:top}
+.service-main h3{transition:transform .5s var(--ease-premium),color .4s}
+.service-row:hover .service-main h3{transform:translateX(8px);color:#fff}
+.sector-row{position:relative;overflow:hidden}
+.sector-row:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(48,60,150,.08),rgba(255,91,31,.045),transparent 75%);transform:translateX(-101%);transition:transform .65s var(--ease-premium);pointer-events:none}
+.sector-row:hover:before{transform:none}
+.sector-row>*{position:relative;z-index:1}
+.sector-row b{transition:transform .5s var(--ease-premium)}
+.sector-row:hover b{transform:translateX(9px)}
+.project-grid{perspective:1200px}
+.project-card{position:relative}
+.project-card:nth-child(5) .project-visual{background:radial-gradient(circle at 25% 40%,#5968e2,transparent 23%),linear-gradient(145deg,#10131c,#24305d)}
+.project-card:nth-child(6) .project-visual{background:radial-gradient(circle at 72% 35%,#e86a38,transparent 21%),linear-gradient(145deg,#17131a,#4a2c27)}
+.project-card:nth-child(7) .project-visual{background:radial-gradient(circle at 55% 65%,#4652bb,transparent 27%),linear-gradient(145deg,#101219,#263247)}
+.project-card:nth-child(8) .project-visual{background:radial-gradient(circle at 35% 25%,#ef6b36,transparent 20%),linear-gradient(145deg,#121319,#312b35)}
+.project-card:after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,0);pointer-events:none;transition:border-color .6s,box-shadow .6s}
+.project-card:hover:after{border-color:rgba(255,255,255,.14);box-shadow:inset 0 0 0 1px rgba(255,91,31,.08)}
+.project-body h3{transition:transform .45s var(--ease-premium)}
+.project-card:hover .project-body h3{transform:translateX(4px)}
+.insight-stage{overflow:hidden}
+.evidence-machine{transform:translateZ(0);transition:transform 1s var(--ease-premium)}
+.insight-stage:hover .evidence-machine{transform:scale(1.018)}
+.opps{overflow:hidden}
+.opps-panel{position:relative;z-index:2}
+.contact-grid input:focus,.contact-grid select:focus,.contact-grid textarea:focus{outline:none;border-color:rgba(48,60,150,.5);box-shadow:0 0 0 4px rgba(48,60,150,.08)}
+
+/* Scroll-led active navigation */
+.nav a.is-active{color:#fff}.nav a.is-active:after{transform:scaleX(1);transform-origin:left}
+
+@media(max-width:1100px){.brand img{width:166px}.hero-inner{grid-template-columns:1fr 44%}.hero-copy{max-width:700px}.hero-title{font-size:clamp(58px,7.5vw,102px)}}
+@media(max-width:680px){.brand img{width:148px}.hero-inner{grid-template-columns:1fr}.hero-copy{max-width:none}.hero-title{font-size:clamp(52px,14vw,78px)}.hero-visual{right:-42%!important;top:58%!important}.section-title-row{gap:35px}.service-row:hover{padding-left:12px;padding-right:12px}}
+@media(prefers-reduced-motion:reduce){.hero-visual:before,.hero-scan{animation:none!important}.section:hover .section-title-row h2,.projects:hover h2,.insights:hover h2,.people:hover h2,.opportunities:hover h2,.contact:hover h2{transform:none}}

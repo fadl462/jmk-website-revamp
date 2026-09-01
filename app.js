@@ -180,6 +180,20 @@
 })();
 
 
+  // Active section navigation: the header quietly tracks the section in view.
+  const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
+  const navSections = navLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  if (navSections.length) {
+    const navObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(link => link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`));
+      });
+    }, { rootMargin: '-32% 0px -58% 0px', threshold: 0 });
+    navSections.forEach(section => navObserver.observe(section));
+  }
+
+
 // Hero visual responds to the pointer as a single composed instrument.
 const heroVisual = document.querySelector('.hero-visual');
 if (heroVisual && matchMedia('(pointer:fine)').matches) {
