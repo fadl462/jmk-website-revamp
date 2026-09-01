@@ -13,19 +13,29 @@
     if (countEl) countEl.textContent = String(count).padStart(2, '0');
   }, 28);
 
-  // Custom cursor intentionally disabled in V14 to keep navigation and content unobstructed.
-  const cursor = null;
-  const cursorLabel = null;
-  if (false) {
+  // Native hand cursor stays visible on clickable elements. A small animated follower adds motion without obscuring UI.
+  const cursor = document.getElementById('cursor');
+  const cursorLabel = document.getElementById('cursor-label');
+  if (cursorLabel) cursorLabel.style.display = 'none';
+  if (cursor && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     let mx = innerWidth / 2, my = innerHeight / 2, cx = mx, cy = my;
-    addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursorLabel.style.left = `${mx}px`; cursorLabel.style.top = `${my}px`; });
-    const loop = () => { cx += (mx - cx) * .16; cy += (my - cy) * .16; cursor.style.left = `${cx}px`; cursor.style.top = `${cy}px`; requestAnimationFrame(loop); };
+    let visible = false;
+    addEventListener('pointermove', e => {
+      mx = e.clientX; my = e.clientY;
+      if (!visible) { cursor.classList.add('visible'); visible = true; }
+    }, { passive: true });
+    addEventListener('pointerleave', () => cursor.classList.remove('visible'));
+    addEventListener('pointerenter', () => cursor.classList.add('visible'));
+    const loop = () => {
+      cx += (mx - cx) * .22; cy += (my - cy) * .22;
+      cursor.style.left = `${cx}px`; cursor.style.top = `${cy}px`;
+      requestAnimationFrame(loop);
+    };
     loop();
-    const bindCursor = () => document.querySelectorAll('a,button,.service-row,.sector-row,.project-card').forEach(el => {
+    document.querySelectorAll('a,button,.service-row,.sector-row,.project-card,.line-link,.text-arrow').forEach(el => {
       el.addEventListener('mouseenter', () => cursor.classList.add('active'));
       el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
     });
-    bindCursor();
   }
 
   // Hero title: fail-safe cinematic entrance. The title remains visible even if motion JS is unavailable.
