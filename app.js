@@ -13,10 +13,10 @@
     if (countEl) countEl.textContent = String(count).padStart(2, '0');
   }, 28);
 
-  // Smooth custom cursor on fine pointers only.
-  const cursor = document.getElementById('cursor');
-  const cursorLabel = document.getElementById('cursor-label');
-  if (cursor && cursorLabel && matchMedia('(pointer:fine)').matches) {
+  // Custom cursor intentionally disabled in V14 to keep navigation and content unobstructed.
+  const cursor = null;
+  const cursorLabel = null;
+  if (false) {
     let mx = innerWidth / 2, my = innerHeight / 2, cx = mx, cy = my;
     addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursorLabel.style.left = `${mx}px`; cursorLabel.style.top = `${my}px`; });
     const loop = () => { cx += (mx - cx) * .16; cy += (my - cy) * .16; cursor.style.left = `${cx}px`; cursor.style.top = `${cy}px`; requestAnimationFrame(loop); };

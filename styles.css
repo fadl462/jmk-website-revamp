@@ -277,3 +277,31 @@ a,button,input,select,textarea{cursor:none}
   .hero-actions{margin-top:25px}
   .hero-visual{top:57%;right:-48%;width:95vw}
 }
+
+
+/* V14 — clean pointer + true first-viewport hero */
+.cursor,.cursor-label{display:none!important}
+body,a,button,.service-row,.sector-row,.project-card{cursor:auto}
+.hero-inner{grid-template-columns:58% 42%;padding:92px 7vw 28px;align-items:center}
+.hero-copy{max-width:760px}
+.hero-title{font-size:clamp(54px,5.45vw,78px);line-height:.88;letter-spacing:-.07em;margin:18px 0 22px;max-width:760px}
+.hero-desc{max-width:600px;font-size:13px;line-height:1.55}
+.hero-actions{margin-top:22px}
+.hero-bottom{bottom:14px}
+.hero-visual-minimal{width:min(39vw,540px)!important;right:2.5vw!important;top:50%!important}
+@media(max-width:1100px){
+  .hero-inner{grid-template-columns:56% 44%;padding:88px 6vw 26px}
+  .hero-title{font-size:clamp(50px,6.1vw,70px);line-height:.89;margin:16px 0 20px}
+  .hero-desc{font-size:12.5px;max-width:500px}
+  .hero-actions{margin-top:20px}
+  .hero-visual-minimal{width:min(45vw,500px)!important;right:-2vw!important;top:50%!important}
+}
+@media(max-width:680px){
+  .hero{height:auto;min-height:760px}
+  .hero-inner{display:block;height:auto;min-height:760px;padding:120px 22px 72px}
+  .hero-copy{max-width:none}
+  .hero-title{font-size:clamp(50px,13.4vw,76px);line-height:.88;margin:20px 0 22px}
+  .hero-desc{font-size:13px;line-height:1.6;max-width:100%}
+  .hero-actions{margin-top:24px}
+  .hero-visual-minimal{width:78vw!important;right:-38vw!important;top:59%!important;opacity:.18!important}
+}
