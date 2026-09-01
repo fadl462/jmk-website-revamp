@@ -178,3 +178,11 @@
     form.reset();
   });
 })();
+
+
+// Hero visual responds to the pointer as a single composed instrument.
+const heroVisual = document.querySelector('.hero-visual');
+if (heroVisual && matchMedia('(pointer:fine)').matches) {
+  heroVisual.addEventListener('mouseenter', () => heroVisual.classList.add('is-active'));
+  heroVisual.addEventListener('mouseleave', () => heroVisual.classList.remove('is-active'));
+}
