@@ -123,6 +123,40 @@
     history.replaceState(null, '', a.getAttribute('href'));
   }));
 
+
+  // Premium ambient motion: pointer + scroll parallax, intentionally subtle.
+  const motionFine = matchMedia('(pointer:fine)').matches;
+  let rafPending = false;
+  const updateAmbient = () => {
+    const root = document.documentElement;
+    root.style.setProperty('--scroll-y', `${Math.min(scrollY, 1400)}px`);
+    rafPending = false;
+  };
+  addEventListener('scroll', () => { if (!rafPending) { rafPending = true; requestAnimationFrame(updateAmbient); } }, {passive:true});
+  updateAmbient();
+  if (motionFine) {
+    addEventListener('pointermove', e => {
+      document.documentElement.style.setProperty('--pointer-x', `${e.clientX - innerWidth / 2}px`);
+      document.documentElement.style.setProperty('--pointer-y', `${e.clientY - innerHeight / 2}px`);
+    }, {passive:true});
+  }
+
+  // Tactile tilt on project cards; removed automatically on coarse pointers.
+  if (motionFine) {
+    document.addEventListener('pointermove', e => {
+      const card = e.target.closest('.project-card');
+      if (!card) return;
+      const r = card.getBoundingClientRect();
+      const rx = ((e.clientY - r.top) / r.height - .5) * -4;
+      const ry = ((e.clientX - r.left) / r.width - .5) * 4;
+      card.style.transform = `translateY(-10px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    }, {passive:true});
+    document.addEventListener('pointerout', e => {
+      const card = e.target.closest('.project-card');
+      if (card && !card.contains(e.relatedTarget)) card.style.transform = '';
+    });
+  }
+
   // Prototype contact feedback.
   const form = document.getElementById('contact-form');
   form?.addEventListener('submit', e => {
