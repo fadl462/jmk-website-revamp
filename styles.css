@@ -251,3 +251,29 @@ a,button,input,select,textarea{cursor:none}
 @media(max-width:1100px){.hero-visual-minimal{width:54vw!important;right:-5vw!important;top:51%!important;opacity:.6!important}}
 @media(max-width:680px){.hero-visual-minimal{width:78vw!important;right:-36vw!important;top:58%!important;opacity:.22!important}.hero-visual-minimal .minimal-node{display:none!important}.hero-visual-minimal .hero-core{width:82px;height:82px;font-size:12px}.hero-visual-minimal .minimal-sweep{display:none!important}}
 @media(prefers-reduced-motion:reduce){.hero-visual-minimal .minimal-ring,.hero-visual-minimal .minimal-sweep,.hero-visual-minimal .minimal-node{animation:none!important}}
+
+/* V13 — single-screen hero composition */
+.hero{min-height:100svh;height:100svh}
+.hero-inner{min-height:100%;height:100%;padding:120px 7vw 42px;align-items:center}
+.hero-copy{max-width:720px}
+.hero-index{top:-28px}
+.hero-title{font-size:clamp(56px,6.35vw,94px);line-height:.86;letter-spacing:-.07em;margin:22px 0 25px;max-width:760px}
+.hero-desc{max-width:575px;font-size:14px;line-height:1.6}
+.hero-actions{margin-top:27px}
+.hero-bottom{bottom:20px}
+.hero-visual{right:2vw;top:50%;width:min(43vw,590px)}
+@media(max-width:1100px){
+  .hero{height:100svh;min-height:720px}
+  .hero-inner{padding:105px 6vw 38px}
+  .hero-title{font-size:clamp(54px,7.4vw,82px)}
+  .hero-desc{font-size:13px;max-width:500px}
+  .hero-visual{right:-4vw;width:min(48vw,520px)}
+}
+@media(max-width:680px){
+  .hero{height:auto;min-height:760px}
+  .hero-inner{height:auto;min-height:760px;padding:125px 22px 75px}
+  .hero-title{font-size:clamp(50px,13.7vw,78px);line-height:.87;margin:21px 0 23px}
+  .hero-desc{font-size:13px;line-height:1.65}
+  .hero-actions{margin-top:25px}
+  .hero-visual{top:57%;right:-48%;width:95vw}
+}
