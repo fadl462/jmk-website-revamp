@@ -204,3 +204,50 @@ a,button,input,select,textarea{cursor:none}
 @media(max-width:1100px){.brand img{width:166px}.hero-inner{grid-template-columns:1fr 44%}.hero-copy{max-width:700px}.hero-title{font-size:clamp(58px,7.5vw,102px)}}
 @media(max-width:680px){.brand img{width:148px}.hero-inner{grid-template-columns:1fr}.hero-copy{max-width:none}.hero-title{font-size:clamp(52px,14vw,78px)}.hero-visual{right:-42%!important;top:58%!important}.section-title-row{gap:35px}.service-row:hover{padding-left:12px;padding-right:12px}}
 @media(prefers-reduced-motion:reduce){.hero-visual:before,.hero-scan{animation:none!important}.section:hover .section-title-row h2,.projects:hover h2,.insights:hover h2,.people:hover h2,.opportunities:hover h2,.contact:hover h2{transform:none}}
+
+
+/* V11 — simplified evidence instrument: fewer rings, no background clutter */
+.hero-visual-simple::before,
+.hero-visual-simple::after{content:none!important;display:none!important}
+.hero-visual-simple .hero-scan,
+.hero-visual-simple .hero-visual-label,
+.hero-visual-simple .signal-c,
+.hero-visual-simple .orbit-dot{display:none!important}
+.hero-visual-simple{width:min(43vw,590px)!important;top:46%!important;right:3vw!important;filter:none!important;opacity:.96}
+.hero-visual-simple .signal{mix-blend-mode:normal!important;animation:orbit 30s linear infinite!important;box-shadow:none!important}
+.hero-visual-simple .signal-a{inset:10%!important;border:1px solid rgba(255,255,255,.14)!important}
+.hero-visual-simple .signal-b{inset:27%!important;border:1px solid rgba(255,91,31,.34)!important;animation-duration:21s!important;animation-direction:reverse!important}
+.hero-visual-simple .signal-a::after{width:6px;height:6px;top:-3px;background:var(--orange);box-shadow:0 0 18px rgba(255,91,31,.65)}
+.hero-visual-simple .signal-b::after{width:5px;height:5px;bottom:-3px;background:#6675ff;box-shadow:0 0 16px rgba(102,117,255,.55)}
+.hero-visual-simple .hero-core{width:104px;height:104px;box-shadow:0 0 58px rgba(57,73,190,.34)!important;background:radial-gradient(circle at 35% 30%,#4f5dc6,#263078 72%)}
+.hero-visual-simple .hero-core i{display:none!important}
+.hero-visual-simple .data-node{min-width:80px;padding:11px 13px;border-radius:10px;background:rgba(13,16,24,.64);border-color:rgba(255,255,255,.12);backdrop-filter:blur(10px);box-shadow:0 14px 32px rgba(0,0,0,.16);font-size:16px;animation:float 7s ease-in-out infinite!important}
+.hero-visual-simple .data-node span{font-size:7px;opacity:.75}
+.hero-visual-simple .n1{left:5%!important;top:26%!important}
+.hero-visual-simple .n2{right:5%!important;top:20%!important}
+.hero-visual-simple .n3{right:7%!important;bottom:21%!important}
+@media(max-width:1100px){.hero-visual-simple{width:58vw!important;right:-9vw!important;top:50%!important;opacity:.62}}
+@media(max-width:680px){.hero-visual-simple{width:80vw!important;right:-38vw!important;top:58%!important;opacity:.28}.hero-visual-simple .data-node{display:none!important}}
+@media(prefers-reduced-motion:reduce){.hero-visual-simple .signal,.hero-visual-simple .data-node{animation:none!important}}
+
+/* V12 — ultra-minimal hero instrument: one visual idea, generous negative space */
+.hero-visual-minimal{width:min(39vw,560px)!important;aspect-ratio:1;right:4vw!important;top:50%!important;opacity:.94!important;filter:none!important}
+.hero-visual-minimal::before,.hero-visual-minimal::after{display:none!important;content:none!important}
+.hero-visual-minimal .minimal-ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none}
+.hero-visual-minimal .ring-outer{width:82%;height:82%;border:1px solid rgba(255,255,255,.13);animation:minimalRotate 34s linear infinite}
+.hero-visual-minimal .ring-inner{width:54%;height:54%;border:1px solid rgba(255,91,31,.28);animation:minimalRotateReverse 24s linear infinite}
+.hero-visual-minimal .ring-inner::after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:var(--orange);top:-3px;left:50%;box-shadow:0 0 18px rgba(255,91,31,.55)}
+.hero-visual-minimal .minimal-sweep{position:absolute;left:50%;top:50%;width:68%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform-origin:left center;animation:minimalSweep 8s ease-in-out infinite}
+.hero-visual-minimal .hero-core{width:106px;height:106px;box-shadow:0 0 62px rgba(57,73,190,.35)!important;background:radial-gradient(circle at 35% 30%,#4f5dc6,#263078 72%);z-index:3}
+.hero-visual-minimal .hero-core i{display:none!important}
+.hero-visual-minimal .minimal-node{position:absolute;z-index:4;min-width:78px;padding:11px 13px;border:1px solid rgba(255,255,255,.11);border-radius:9px;background:rgba(10,13,20,.58);backdrop-filter:blur(9px);font:700 16px Space Grotesk;color:#fff;box-shadow:0 12px 28px rgba(0,0,0,.12);animation:minimalFloat 6s ease-in-out infinite}
+.hero-visual-minimal .minimal-node span{display:block;margin-top:3px;color:rgba(255,255,255,.48);font:7px 'DM Mono',monospace;letter-spacing:.12em}
+.hero-visual-minimal .node-sectors{left:2%;top:27%}
+.hero-visual-minimal .node-life{right:1%;top:66%;animation-delay:-2.5s}
+@keyframes minimalRotate{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes minimalRotateReverse{to{transform:translate(-50%,-50%) rotate(-360deg)}}
+@keyframes minimalSweep{0%,100%{transform:rotate(-20deg) scaleX(.75);opacity:.2}50%{transform:rotate(25deg) scaleX(1);opacity:.55}}
+@keyframes minimalFloat{50%{transform:translateY(-7px)}}
+@media(max-width:1100px){.hero-visual-minimal{width:54vw!important;right:-5vw!important;top:51%!important;opacity:.6!important}}
+@media(max-width:680px){.hero-visual-minimal{width:78vw!important;right:-36vw!important;top:58%!important;opacity:.22!important}.hero-visual-minimal .minimal-node{display:none!important}.hero-visual-minimal .hero-core{width:82px;height:82px;font-size:12px}.hero-visual-minimal .minimal-sweep{display:none!important}}
+@media(prefers-reduced-motion:reduce){.hero-visual-minimal .minimal-ring,.hero-visual-minimal .minimal-sweep,.hero-visual-minimal .minimal-node{animation:none!important}}
