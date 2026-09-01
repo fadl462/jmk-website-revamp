@@ -28,6 +28,18 @@
     bindCursor();
   }
 
+  // Hero title: fail-safe cinematic entrance. The title remains visible even if motion JS is unavailable.
+  const heroTitle = document.querySelector('.hero-title');
+  if (heroTitle && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const heroLines = heroTitle.querySelectorAll('span');
+    heroLines.forEach((line, i) => {
+      line.style.opacity = '0';
+      line.style.transform = 'translateY(58px)';
+      line.style.transition = `opacity .9s cubic-bezier(.16,1,.3,1) ${i * 120}ms, transform .9s cubic-bezier(.16,1,.3,1) ${i * 120}ms`;
+    });
+    requestAnimationFrame(() => requestAnimationFrame(() => heroLines.forEach(line => { line.style.opacity = '1'; line.style.transform = 'none'; })));
+  }
+
   // Scroll state.
   const onScroll = () => {
     const max = document.documentElement.scrollHeight - innerHeight;

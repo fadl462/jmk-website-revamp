@@ -95,3 +95,8 @@ a,button,input,select,textarea{cursor:none}
 @media(max-width:1000px){body{cursor:auto}a,button,input,select,textarea{cursor:auto}.hero{min-height:820px}.hero-title{font-size:clamp(56px,10vw,92px)}.hero-visual{opacity:.7}.brand img{width:165px}.hero-index{left:0}}
 @media(max-width:680px){.hero{min-height:760px}.hero-inner{padding-top:175px}.hero-title{font-size:clamp(50px,14vw,78px);line-height:.87}.hero-desc{font-size:14px}.hero-visual{opacity:.3;right:-245px}.hero-index{display:none}.section{padding-top:90px;padding-bottom:90px}.project-card:hover{transform:translateY(-5px)}.opps:before{right:-300px}.brand img{width:150px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}.hero-title span{clip-path:none}.project-visual:after,.opps:before,.opps:after{animation:none}}
+
+/* V4 precision fixes: one clean logo + fail-safe hero typography */
+.brand img{display:block;width:178px;height:auto;object-fit:contain;filter:none!important}
+.hero-title span{clip-path:none!important;animation:none!important;opacity:1;transform:none;will-change:opacity,transform}
+@media(max-width:680px){.brand img{width:152px}.hero-title{max-width:92vw}}
