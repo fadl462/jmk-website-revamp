@@ -99,25 +99,25 @@
     });
   }
 
-  // Projects: varied visual language rather than identical cards.
+  // Projects: real JMK corporate-experience examples sourced from the current site.
   const projects = [
-    ['Education','Monitoring & Evaluation','National-scale education evidence programme'],
-    ['Governance','Research','Institutional systems and citizen experience study'],
-    ['Agriculture','Data & Analytics','Agricultural livelihoods data and insight programme'],
-    ['WASH','Field Research','Community water and sanitation assessment'],
-    ['Education','Data Systems','Workforce data and decision-support study'],
-    ['Governance','Impact Assessment','Public-sector programme learning and evaluation'],
-    ['Agriculture','Field Research','Smallholder market and livelihoods research'],
-    ['WASH','Monitoring & Evaluation','Water access and service quality assessment']
+    {sector:'Education',service:'Baseline Study',title:'Baseline Study of Pre-Tertiary Reform in Ghana',client:'BigWin Philanthropy / Ministry of Education Reform Secretariat',year:'2019',image:'https://static.wixstatic.com/media/573cbf_f6b01455385a4c278defc5324df72233~mv2.jpg/v1/fill/w_980%2Ch_458%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/573cbf_f6b01455385a4c278defc5324df72233~mv2.jpg'},
+    {sector:'Governance',service:'Research',title:'Research into the feasible Public-Private Partnership model for the establishment of a Commodity Exchange in Ghana',client:'Ghana Chamber of Commerce and Industry / BUSAC Fund',year:'2011',image:'https://static.wixstatic.com/media/573cbf_a4d627ba158043b49bdc9c2583e69d8e~mv2.jpg/v1/fill/w_980%2Ch_345%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/573cbf_a4d627ba158043b49bdc9c2583e69d8e~mv2.jpg'},
+    {sector:'Education',service:'Needs Assessment',title:'Needs assessment of community schools in 40 target cocoa growing communities in Ghana',client:'International Labour Organization',year:'2012',image:'https://static.wixstatic.com/media/573cbf_20165595bd854df3840a805988140485~mv2.png/v1/fill/w_980%2Ch_326%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/573cbf_20165595bd854df3840a805988140485~mv2.png'},
+    {sector:'Inclusion',service:'Gender Analysis',title:'Project-based participatory Gender analysis of the PAGES project',client:'Plan Ghana',year:'2011',image:'https://static.wixstatic.com/media/573cbf_f6b01455385a4c278defc5324df72233~mv2.jpg/v1/fill/w_980%2Ch_458%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/573cbf_f6b01455385a4c278defc5324df72233~mv2.jpg'},
+    {sector:'Governance',service:'Impact Assessment',title:'Development of performance management systems and governance assessments',client:'SEND Ghana / public-sector partners',year:'Selected experience',image:'https://static.wixstatic.com/media/573cbf_a4d627ba158043b49bdc9c2583e69d8e~mv2.jpg/v1/fill/w_980%2Ch_345%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/573cbf_a4d627ba158043b49bdc9c2583e69d8e~mv2.jpg'},
+    {sector:'Livelihoods',service:'Household Data Collection',title:'Data collection in the Savannah Region for the Ghana National Household Registry',client:'MOGCSP / GNHR',year:'2020',image:'https://static.wixstatic.com/media/573cbf_20165595bd854df3840a805988140485~mv2.png/v1/fill/w_980%2Ch_326%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/573cbf_20165595bd854df3840a805988140485~mv2.png'},
+    {sector:'Agriculture',service:'Baseline Survey',title:'Baseline survey of vulnerable farmer households for the Bono-Asante Atea (BAAT) project',client:'ADRA',year:'2019',image:'https://static.wixstatic.com/media/573cbf_f6b01455385a4c278defc5324df72233~mv2.jpg/v1/fill/w_980%2Ch_458%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/573cbf_f6b01455385a4c278defc5324df72233~mv2.jpg'},
+    {sector:'Education',service:'Evaluation',title:'Baseline evaluation of Making Ghanaian Girls Great (MGCubed) project',client:'Social Impact / Varkey Foundation',year:'2018',image:'https://static.wixstatic.com/media/573cbf_a4d627ba158043b49bdc9c2583e69d8e~mv2.jpg/v1/fill/w_980%2Ch_345%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/573cbf_a4d627ba158043b49bdc9c2583e69d8e~mv2.jpg'}
   ];
   const grid = document.getElementById('project-grid');
   function render(filter = 'All') {
-    const list = filter === 'All' ? projects : projects.filter(p => p[0] === filter);
+    const list = filter === 'All' ? projects : projects.filter(p => p.sector === filter);
     if (!grid) return;
     grid.innerHTML = list.map((p, i) => `
       <article class="project-card">
-        <div class="project-visual"><span class="project-number">${String(i + 1).padStart(2,'0')}</span><span class="project-sector">${p[0]}</span></div>
-        <div class="project-body"><span class="project-tag">${p[1]}</span><h3>${p[2]}</h3><a href="#contact">View case study ↗</a></div>
+        <div class="project-visual" style="--project-image:url('${p.image}')"><span class="project-number">${String(i + 1).padStart(2,'0')}</span><span class="project-sector">${p.sector}</span></div>
+        <div class="project-body"><span class="project-tag">${p.service} · ${p.year}</span><h3>${p.title}</h3><p class="project-client">${p.client}</p><a href="https://www.jmkconsultinggroup.com/featured-projects" target="_blank" rel="noopener">View JMK experience ↗</a></div>
       </article>`).join('');
     requestAnimationFrame(() => grid.querySelectorAll('.project-card').forEach((el, i) => setTimeout(() => el.classList.add('visible'), i * 65)));
   }
@@ -126,14 +126,6 @@
     document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
     btn.classList.add('active'); render(btn.dataset.filter);
   }));
-
-  // Project hover label for the custom cursor.
-  document.addEventListener('mouseover', e => {
-    if (e.target.closest('.project-card')) cursorLabel?.classList.add('show');
-  });
-  document.addEventListener('mouseout', e => {
-    if (e.target.closest('.project-card')) cursorLabel?.classList.remove('show');
-  });
 
   // Native anchor scrolling with offset for fixed navigation.
   document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
