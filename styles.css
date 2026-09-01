@@ -287,7 +287,7 @@ body,a,button,.service-row,.sector-row,.project-card{cursor:auto}
 .hero-title{font-size:clamp(54px,5.45vw,78px);line-height:.88;letter-spacing:-.07em;margin:18px 0 22px;max-width:760px}
 .hero-desc{max-width:600px;font-size:13px;line-height:1.55}
 .hero-actions{margin-top:22px}
-.hero-bottom{bottom:14px}
+.hero-bottom{bottom:58px}
 .hero-visual-minimal{width:min(39vw,540px)!important;right:2.5vw!important;top:50%!important}
 @media(max-width:1100px){
   .hero-inner{grid-template-columns:56% 44%;padding:88px 6vw 26px}
@@ -295,6 +295,7 @@ body,a,button,.service-row,.sector-row,.project-card{cursor:auto}
   .hero-desc{font-size:12.5px;max-width:500px}
   .hero-actions{margin-top:20px}
   .hero-visual-minimal{width:min(45vw,500px)!important;right:-2vw!important;top:50%!important}
+  .hero-bottom{bottom:44px}
 }
 @media(max-width:680px){
   .hero{height:auto;min-height:760px}
@@ -304,4 +305,5 @@ body,a,button,.service-row,.sector-row,.project-card{cursor:auto}
   .hero-desc{font-size:13px;line-height:1.6;max-width:100%}
   .hero-actions{margin-top:24px}
   .hero-visual-minimal{width:78vw!important;right:-38vw!important;top:59%!important;opacity:.18!important}
+  .hero-bottom{bottom:28px}
 }
